@@ -9,7 +9,7 @@ type ProfileProps = {
 const Profile = (props: ProfileProps) => {
     const { name, address, email } = props;
     const [count, setCount] = useState(0);
-
+    
     return (
         <div style={{ border: "1px solid black" }}>
             <h1>Name: {name}</h1>

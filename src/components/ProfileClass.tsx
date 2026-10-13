@@ -6,8 +6,14 @@ type ProfileClassProps = {
     email: string;
 };
 
+type GitHubUser = {
+    name: string;
+    avatar_url: string;
+};
+
 type ProfileClassState = {
     count: number;
+    userDetails: GitHubUser | null;
 };
 
 class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState> {
@@ -15,15 +21,40 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
         super(props);
         this.state = {
             count: 0,
+            userDetails: null,
         };
     }
 
+    override async componentDidMount() {
+        const response = await fetch("https://api.github.com/users/soumiik");
+        const data = (await response.json()) as GitHubUser;
+        this.setState({
+            userDetails: data,
+        });
+    }
+
+    override componentDidUpdate() {
+        console.log("Update is called");
+    }
+
+    override componentWillUnmount(): void {
+        console.log("Unmount is called");
+    }
+
     override render() {
+        if (this.state.userDetails === null) {
+            return <h1>loading...</h1>;
+        }
+
+        const { name, avatar_url } = this.state.userDetails;
+
         return (
             <div style={{ border: "1px solid black" }}>
                 <h1>Name: {this.props.name}</h1>
                 <h1>Address: {this.props.address}</h1>
                 <h1>Email: {this.props.email}</h1>
+                <h1>GitHub Name: {name}</h1>
+                <img src={avatar_url} alt={name} style={{ width: 80, height: 80 }} />
                 <button
                     onClick={() => {
                         this.setState({
@@ -39,3 +70,6 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
 }
 
 export default ProfileClass;
+
+//Constructor->Render Method->ComponentDidMount->Again rerender->Constructor->
+// Render Method->componentDidUpdate->componentWillUnmount(Leave the page)
