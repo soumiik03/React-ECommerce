@@ -1,29 +1,32 @@
-import React, { useEffect,useState }from 'react'
-import { Link } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
-    const[btnName,setbtnName]=useState("Light");
+    const [btnName, setbtnName] = useState("Light");
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log("Use effect Called");
-    },[])
+    }, []);
 
     return (
-        <div className='Navbar'>
+        <div className="Navbar">
             <h1>Logo</h1>
-            <ul className='MenuItems'>
-                <li><Link to="/men">Men</Link></li>
-                <li><Link to="/women">Women</Link></li>
+            <ul className="MenuItems">
+                <li><RouterLink to="/men">Men</RouterLink></li>
+                <li><RouterLink to="/women">Women</RouterLink></li>
                 <li>Kids</li>
-                <li><Link to="/about">About</Link></li>
+                <li><RouterLink to="/about">About</RouterLink></li>
                 <li>Cart</li>
-                <button onClick={()={
-                    btnName=== "Light" ? setbtnName("Dark"):setbtnName("Light");
-                }}></button>
+                <button
+                    onClick={() => {
+                        btnName === "Light" ? setbtnName("Dark") : setbtnName("Light");
+                    }}
+                >
+                    {btnName}
+                </button>
             </ul>
-
         </div>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
