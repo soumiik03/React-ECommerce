@@ -31,10 +31,18 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
         this.setState({
             userDetails: data,
         });
+        console.log("Component Did Mount");
+        this.timer=setInterval(()=>{
+            console.log("Class Component")
+        })
     }
 
-    override componentDidUpdate() {
+    override componentDidUpdate(prevProps,prevState) {
         console.log("Update is called");
+
+        if(this.state.count != prevState.count){        //Same like useEffect array depedencies
+            console.log("Called")
+        }
     }
 
     override componentWillUnmount(): void {

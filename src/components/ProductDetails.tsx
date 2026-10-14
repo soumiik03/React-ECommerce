@@ -7,6 +7,12 @@ export const ProductDetails = () => {
 
     useEffect(() => {
         fetchData()
+        const timer=setInterval(()=>{
+            console.log("Fn Component")
+        },1000)
+        return()=>{                //Cleanup
+            clearInterval(timer);
+        }
     }, []);
 
     const fetchData = async () => {
