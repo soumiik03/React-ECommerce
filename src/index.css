@@ -1,51 +1,44 @@
 @import "../styles/globals.css";
 
-@layer base {
-  :root {
-    @apply font-sans;
-  }
-
-  body {
-    @apply grid place-items-center min-w-[320px] min-h-screen relative m-0 bg-background text-foreground;
-  }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
 }
 
-/* cool Bun background animation 😎 */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.05;
-  background: url("./logo.svg");
-  background-size: 256px;
-  transform: rotate(-12deg) scale(1.35);
-  animation: slide 30s linear infinite;
-  pointer-events: none;
+.navbar >h1{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-@keyframes slide {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 256px 224px;
-  }
+.navbar >ul{
+    display: flex;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar >ul >li{
+    padding: 10px;
+    list-style-type: none;
 }
 
-@media (prefers-reduced-motion) {
-  *,
-  ::before,
-  ::after {
-    animation: none !important;
-  }
+.product_card{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;  
+    margin-top: 10px;
+    
+
+}
+
+.product > .product_img{
+    width: 200px;
+}
+
+.product{
+    margin-left: 10px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
 }
