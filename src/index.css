@@ -63,3 +63,25 @@
   .simple-btn:hover {
     background: #03693a; 
   }
+
+
+.navbar>.menu_items>.theme{
+    background: #4bea9d; 
+    border: none;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 3px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    
+    
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  
+  .simple-btn:hover {
+    background: #03693a; 
+} 
