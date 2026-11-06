@@ -42,3 +42,24 @@
     text-align: center;
     margin: 10px;
 }
+
+.simple-btn {
+    
+    background: #4bea9d; 
+    border: none;
+    color: white;
+    
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    
+    
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  
+  .simple-btn:hover {
+    background: #03693a; 
+  }
