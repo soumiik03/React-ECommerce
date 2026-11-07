@@ -1,11 +1,32 @@
-import { ProductList } from "@/utils/ProductList";
 import { Product } from "./Product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface ProductType {
+  _id: number;
+  title: string;
+  des: string;
+  oldPrice: number;
+  price: number;
+  brand: string;
+  image: string;
+  isNew: boolean;
+  category: string;
+}
 
 export const ProductCard = () => {
   //local state variable
-  const[ListofProduct,setListofProduct]=useState(ProductList); //Array destructuring
+  const[ListofProduct,setListofProduct]=useState<ProductType[]>([]); //Array destructuring
 
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+  const fetchData=async()=>{
+    const data=await fetch("https://fakestoreapi.noksha.dev/api/walmartproducts")
+    const resData=await data.json();
+    //console.log(resData)
+    setListofProduct(resData.data)
+  }
   return (
     <div>
       <button className="simple-btn" onClick={()=>{
