@@ -7,11 +7,12 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import  App  from "./App";
+import { appRouter } from "./App";
+import { RouterProvider } from "react-router-dom";
 
 const elem = document.getElementById("root")!;
 const app = (
-    <App />
+    <RouterProvider router={appRouter} />
 );
 
 // https://bun.com/docs/bundler/hot-reloading#import-meta-hot-data

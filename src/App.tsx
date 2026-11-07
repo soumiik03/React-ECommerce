@@ -1,14 +1,46 @@
 import "./index.css";
 import Navbar from "./components/Navbar"; //Default export
 import {ProductCard} from "./components/ProductCard"; //named export 
+import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
+import Kid from "./components/Kid";
+import Men from "./components/Men";
+import Error from "./components/Error";
+import { ProductDetails } from "./components/ProductDetails";
 
 const App=()=>{
   return(
     <div>
       <Navbar/>
-      <ProductCard/>
+      <Outlet/>
     </div>
   )
 }
+
+
+export const appRouter=createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+    children:[
+        {
+          path:"/",
+          element:<ProductCard/>
+        },
+        {
+          path:"/kid",
+          element:<Kid/>
+        },
+        {
+          path:"/men",
+          element:<Men/>
+        }
+      
+    ],
+    errorElement:<Error/>
+  },
+  
+]);
+
+
 
 export default App;

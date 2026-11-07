@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar=()=>{
   //let btnName="Light";
@@ -7,9 +8,9 @@ const Navbar=()=>{
       <div className="navbar">
         <h1>LOGO</h1>
         <ul className="menu_items">
-          <li>MEN</li>
+          <li><Link to="/men">MEN</Link></li>
           <li>WOMEN</li>
-          <li>KIDS</li>
+          <li><Link to="/kid">KIDS</Link></li>
           <li>CART</li>
           <button className="theme" onClick={()=>{
             theme=="Light"? setTheme("Dark"): setTheme("Light")
