@@ -11,12 +11,17 @@ import React from "react";
     ) 
 } */
    
-class About extends React.Component{
+export class About extends React.Component{
     constructor(props:ProfileClass){
         super(props);
-
+        console.log  ("Constructor is called");
     }
+    override componentDidMount(): void {
+        console.log("Component Did mount is called")    
+    }
+
     override render(){
+        console.log("Parent render is called")
         return(
             <div>
                 <ProfileClass name="Soumik" address="Kol" email="sou@gmail.com"></ProfileClass>

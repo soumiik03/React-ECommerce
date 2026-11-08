@@ -23,6 +23,7 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
             count: 0,
             userDetails: null, 
         };
+        console.log("Child ctr is called")
     }
 
     /* override async componentDidMount() {
@@ -36,6 +37,7 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
             console.log("Class Component")
         })
     }
+        
 
     override componentDidUpdate(prevProps,prevState) {
         console.log("Update is called");
@@ -49,13 +51,17 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
         console.log("Unmount is called");
     } */
 
+    override componentDidMount(): void {
+            console.log("Child mount is called")
+    }
+
     override render() {
         /* if (this.state.userDetails === null) {
             return <h1>loading...</h1>;
         } */
 
         /* const { name, avatar_url } = this.state.userDetails; */
-
+        console.log("Child render is called")
         return (
             <div style={{ border: "1px solid black" }}>
                 <h1>Class Based Component</h1>
