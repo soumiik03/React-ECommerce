@@ -15,6 +15,7 @@ const Profile = (props: ProfileProps) => {
             <h1>Name: {name}</h1>
             <h1>Address: {address}</h1>
             <h1>Email: {email}</h1>
+            <h1>Count-{count}</h1>
             <button
                 onClick={() => {
                     setCount(count + 1);

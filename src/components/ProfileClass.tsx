@@ -58,6 +58,7 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
 
         return (
             <div style={{ border: "1px solid black" }}>
+                <h1>Class Based Component</h1>
                 <h1>Name: {this.props.name}</h1>
                 <h1>Address: {this.props.address}</h1>
                 <h1>Email: {this.props.email}</h1>
