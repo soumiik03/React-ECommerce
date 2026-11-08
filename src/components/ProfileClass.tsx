@@ -21,11 +21,11 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
         super(props);
         this.state = {
             count: 0,
-            userDetails: null,
+            userDetails: null, 
         };
     }
 
-    override async componentDidMount() {
+    /* override async componentDidMount() {
         const response = await fetch("https://api.github.com/users/soumiik");
         const data = (await response.json()) as GitHubUser;
         this.setState({
@@ -47,22 +47,23 @@ class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState>
 
     override componentWillUnmount(): void {
         console.log("Unmount is called");
-    }
+    } */
 
     override render() {
-        if (this.state.userDetails === null) {
+        /* if (this.state.userDetails === null) {
             return <h1>loading...</h1>;
-        }
+        } */
 
-        const { name, avatar_url } = this.state.userDetails;
+        /* const { name, avatar_url } = this.state.userDetails; */
 
         return (
             <div style={{ border: "1px solid black" }}>
                 <h1>Name: {this.props.name}</h1>
                 <h1>Address: {this.props.address}</h1>
                 <h1>Email: {this.props.email}</h1>
-                <h1>GitHub Name: {name}</h1>
-                <img src={avatar_url} alt={name} style={{ width: 80, height: 80 }} />
+                <h1>Count -{this.state.count}</h1>
+                {/* <h1>GitHub Name: {name}</h1>
+                <img src={avatar_url} alt={name} style={{ width: 80, height: 80 }} /> */}
                 <button
                     onClick={() => {
                         this.setState({

@@ -6,7 +6,7 @@ import Kid from "./components/Kid";
 import Men from "./components/Men";
 import Error from "./components/Error";
 import { ProductDetails } from "./components/ProductDetails";
-
+import { About } from "./components/About";
 
 const App=()=>{
   return(
@@ -38,6 +38,10 @@ export const appRouter=createBrowserRouter([
         {
           path:"/product/:productId",
           element:<ProductDetails/>
+        },
+        {
+          path:"/about",
+          element:<About/>
         }
       
     ],

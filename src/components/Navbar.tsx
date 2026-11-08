@@ -6,12 +6,13 @@ const Navbar=()=>{
   const[theme,setTheme]=useState("Light");
     return(
       <div className="navbar">
-        <h1>LOGO</h1>
+        <h1>AJIO</h1>
         <ul className="menu_items">
           <li><Link to="/men">MEN</Link></li>
           <li>WOMEN</li>
           <li><Link to="/kid">KIDS</Link></li>
           <li>CART</li>
+          <li><Link to="/about">ABOUT</Link></li>
           <button className="theme" onClick={()=>{
             theme=="Light"? setTheme("Dark"): setTheme("Light")
           }}>{theme}</button>

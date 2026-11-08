@@ -88,7 +88,7 @@ export const ProductCard = () => {
         {/* <Product pro={ProductList[0]}/> */}
         {filterProduct.map((product) => {
           return (
-            <Link key={product.id} to={`/product/${product.id}`}>
+            <Link key={product.id} to={`/product/${product.id}`}>       {/* Imp */}
               <Product product={product} />
             </Link>
           );
