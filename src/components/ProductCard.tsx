@@ -1,16 +1,17 @@
 import { Product } from "./Product";
 import { useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
+import { Link } from "react-router-dom";
 
 interface ProductType {
-  _id: number;
+  id: number;
   title: string;
-  des: string;
-  oldPrice: number;
+  description: string;
+  oldPrice?: number;
   price: number;
-  brand: string;
+  brand?: string;
   image: string;
-  isNew: boolean;
+  isNew?: boolean;
   category: string;
 }
 
@@ -26,12 +27,12 @@ export const ProductCard = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://fakestoreapi.noksha.dev/api/walmartproducts",
+      "https://fakestoreapi.com/products/"
     );
     const resData = await data.json();
     //console.log(resData)
-    setListofProduct(resData.data);
-    setfilterProduct(resData.data);
+    setListofProduct(resData);
+    setfilterProduct(resData);
   };
 
   //Conditional Rendering
@@ -76,7 +77,7 @@ export const ProductCard = () => {
           const result = ListofProduct.filter(
             (product) => product.price >= 500,
           ); //filtered products
-          setListofProduct(result);
+          setfilterProduct(result);
         }}
         style={{ marginLeft: "20px", padding: "5px", marginTop: "10px" }}
       >
@@ -86,7 +87,11 @@ export const ProductCard = () => {
       <div className="product_card">
         {/* <Product pro={ProductList[0]}/> */}
         {filterProduct.map((product) => {
-          return <Product key={product._id} product={product} />;
+          return (
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <Product product={product} />
+            </Link>
+          );
         })}
       </div>
     </div>

@@ -1,113 +1,156 @@
 @import "../styles/globals.css";
 
-.navbar{
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #111;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    align-items: center;
+    border-bottom: 1px solid #cfcfcf;
+    background: #fff;
+    padding: 0 16px;
+    height: 60px;
 }
 
-.navbar >h1{
-    margin-left: 10px;
-    margin-top: 10px;
-    font-weight: bold;
+.navbar > h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
-.navbar >ul{
+.navbar > ul {
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.navbar >ul >li{
-    padding: 10px;
-    list-style-type: none;
+.navbar > ul > li {
+    padding: 0 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.product_card{
-    padding: 10px;
+.navbar > ul > li a {
+    color: #111;
+    text-decoration: none;
+}
+
+.navbar > .menu_items > .theme {
+    background: #4bea9d;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    margin-left: 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.product_card {
     display: flex;
-    flex-wrap: wrap;  
-    margin-top: 10px;
-    
-
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    align-items: stretch;
 }
 
-.product > .product_img{
-    width: 200px;
-}
-
-.product{
-    margin-left: 10px;
-    width: 200px;
-    border: 1px solid black;
-    padding: 5px;
+.product {
+    width: 220px;
+    height: 440px;
+    flex: 0 0 220px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 12px;
     text-align: center;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    flex: 0 0 220px;
+    object-fit: contain;
+    background: #f9f9f9;
+    border: 1px solid #ececec;
+    padding: 8px;
+}
+
+.product h1 {
+    margin: 12px 0 6px;
+    font-size: 1rem;
+    line-height: 1.4;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.product p:last-child {
+    font-weight: 700;
+    margin-top: auto;
 }
 
 .simple-btn {
-    
-    background: #4bea9d; 
+    background: #4bea9d;
     border: none;
     color: white;
-    
-    
     padding: 10px 20px;
+    margin-left: 20px;
+    margin-top: 10px;
     font-size: 16px;
-    border-radius: 4px;
-    
-    
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  
-  .simple-btn:hover {
-    background: #03693a; 
-  }
+}
 
+.simple-btn:hover {
+    background: #03693a;
+}
 
-.navbar>.menu_items>.theme{
-    background: #4bea9d; 
-    border: none;
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    padding: 3px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    
-    
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  
-  .simple-btn:hover {
-    background: #03693a; 
-} 
-
-.skeleton_container{
+.skeleton_container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.skeleton{
+.skeleton {
     margin: 10px;
-    width: 200px;
-    height: 400px;
-    background-color: #f0f0f0f0;
-    
+    width: 220px;
+    height: 390px;
+    background-color: #ececec;
 }
 
 .textbox {
-    padding: 10px 14px;
+    width: 240px;
+    padding: 10px 12px;
+    margin-left: 20px;
+    margin-top: 10px;
     font-size: 16px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     outline: none;
-    background: #ffffff;
+    background: #fff;
     color: #1f2937;
-    transition: all 0.2s ease;
 }
 
 .textbox:focus {
@@ -124,13 +167,13 @@
     border: none;
     color: white;
     padding: 10px 20px;
+    margin-left: 10px;
     font-size: 16px;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s ease;
 }
 
 .search:hover {
     background: #56b318;
-}   
+}

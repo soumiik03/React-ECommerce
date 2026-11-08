@@ -7,6 +7,7 @@ import Men from "./components/Men";
 import Error from "./components/Error";
 import { ProductDetails } from "./components/ProductDetails";
 
+
 const App=()=>{
   return(
     <div>
@@ -33,6 +34,10 @@ export const appRouter=createBrowserRouter([
         {
           path:"/men",
           element:<Men/>
+        },
+        {
+          path:"/product/:productId",
+          element:<ProductDetails/>
         }
       
     ],
