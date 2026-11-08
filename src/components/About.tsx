@@ -1,7 +1,7 @@
 import Profile from "./Profile"
 import ProfileClass from "./ProfileClass"
-
-export const About = () => {
+import React from "react";
+/* export const About = () => {
     return (
         <div>
             <h1>Function Component</h1>
@@ -9,18 +9,18 @@ export const About = () => {
             <ProfileClass name="AKA" address="Lota" email="Aou@gmail.com"/>
         </div>
     ) 
-}
+} */
    
-/* class About extends Component{
-    constructor(){
-        super();
+class About extends React.Component{
+    constructor(props:ProfileClass){
+        super(props);
 
     }
-    override render(): React.ReactNode {
+    override render(){
         return(
             <div>
-                <ProfileClass name="Soumik" address="Kol" email="sou@gmail.com"
+                <ProfileClass name="Soumik" address="Kol" email="sou@gmail.com"></ProfileClass>
             </div>
         )
     }
-} */
+} 
