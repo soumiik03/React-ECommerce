@@ -16,36 +16,40 @@ type GitHubUser = {
 type ProfileClassState = {
     //count: number;
     userDetails: GitHubUser | null;
+    
 };
 
 class ProfileClass extends React.Component<ProfileClassProps, ProfileClassState> {
+    private timer!: number;
+
     constructor(props: ProfileClassProps) {
         super(props);
-        this.state={
-            userDetails:null
-        }
-        console.log("Ctr is called")
+        this.state = {
+            userDetails: null,
+        };
+        this.timer = window.setInterval(() => {
+            console.log("Soumik");
+        }, 1000);
+        console.log("Ctr is called");
     }
 
-    override async componentDidMount() {
+    override async componentDidMount(): Promise<void> {
         const response = await fetch("https://api.github.com/users/soumiik03");
-        const data = await response.json()
+        const data: GitHubUser = await response.json();
         this.setState({
             userDetails: data,
         });
         console.log("Component Did Mount");
     }
-        
- 
-    override componentDidUpdate() {
-        console.log("Update is called");
 
-        
+    override componentDidUpdate(): void {
+        console.log("Update is called");
     }
 
     override componentWillUnmount(): void {
         console.log("Unmount is called");
-    } 
+        clearInterval(this.timer);
+    }
 
     /* override componentDidMount(): void {
             console.log("Child mount is called")
