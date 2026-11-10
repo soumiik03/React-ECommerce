@@ -24,7 +24,7 @@ export const ProductCard = () => {
   useEffect(() => {
     fetchData();
     const timer=setInterval(()=>{
-      console.log("fn comp")
+      //console.log("fn comp")
     })
     return()=>{
       clearInterval(timer)
