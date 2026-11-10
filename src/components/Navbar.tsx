@@ -13,6 +13,7 @@ const Navbar=()=>{
           <li><Link to="/kid">KIDS</Link></li>
           <li>CART</li>
           <li><Link to="/about">ABOUT</Link></li>
+          <li><Link to="/grocery">GROCERY</Link></li>
           <button className="theme" onClick={()=>{
             theme=="Light"? setTheme("Dark"): setTheme("Light")
           }}>{theme}</button>

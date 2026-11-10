@@ -7,6 +7,10 @@ import Men from "./components/Men";
 import Error from "./components/Error";
 import { ProductDetails } from "./components/ProductDetails";
 import { About } from "./components/About";
+//import Grocery  from "./components/Grocery";
+import { lazy, Suspense } from "react";
+
+const Grocery=lazy(()=>import('./components/Grocery'));
 
 const App=()=>{
   return(
@@ -42,6 +46,10 @@ export const appRouter=createBrowserRouter([
         {
           path:"/about",
           element:<About/>
+        },
+        {
+          path:"/grocery",
+          element:<Suspense fallback={<h1>Loading..</h1>}> <Grocery/></Suspense>
         }
       
     ],
