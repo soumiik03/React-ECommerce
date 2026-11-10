@@ -2,6 +2,7 @@ import { Product } from "./Product";
 import { useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
 import { Link } from "react-router-dom";
+import { HOF } from "./Product";
 
 interface ProductType {
   id: number;
@@ -13,6 +14,10 @@ interface ProductType {
   image: string;
   isNew?: boolean;
   category: string;
+  rating: {
+  rate: number;
+  count: number;
+  };
 }
 
 export const ProductCard = () => {
@@ -41,6 +46,7 @@ export const ProductCard = () => {
     setfilterProduct(resData);
   };
 
+  const HOFcomponent=HOF(Product)
   //Conditional Rendering
   /* if(ListofProduct.length===0){
     return(
@@ -94,8 +100,11 @@ export const ProductCard = () => {
         {/* <Product pro={ProductList[0]}/> */}
         {filterProduct.map((product) => {
           return (
-            <Link key={product.id} to={`/product/${product.id}`}>       {/* Imp */}
-              <Product product={product} />
+            <Link key={product.id} to={`/product/${product.id}`}> 
+              {
+                product.rating.rate >=4?<HOFcomponent product={product}/>:<Product product={product} />
+              }      {/* Imp */}
+              
             </Link>
           );
         })}

@@ -149,6 +149,34 @@ input {
     border-color: #111111;
 }
 
+.product_card > a > div:has(> span.bg-black) {
+    position: relative;
+    height: 100%;
+}
+
+.product_card > a > div:has(> span.bg-black) .product {
+    border-color: #b28a45;
+    box-shadow: 0 6px 18px rgb(74 54 22 / 10%);
+}
+
+.product_card > a > div:has(> span.bg-black) > span {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    padding: 7px 11px;
+    border: 1px solid #d6bd8b;
+    border-radius: 999px;
+    background: #2f271a;
+    color: #f3eee3;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 .product img {
     width: 100%;
     height: clamp(190px, 23vw, 250px);

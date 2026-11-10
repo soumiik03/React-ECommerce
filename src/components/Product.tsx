@@ -9,3 +9,16 @@ export const Product=({product}:any)=>{
       </div>
     )
   }
+ 
+export const HOF = (WrappedComponent: (props: any) => any) => {
+  return (props: any) => {
+    return (
+      <div>
+        <span className="bg-black text-white px-1 py-4 rounded-md">Best Seller</span>
+        <WrappedComponent {...props} />
+      </div>
+    )
+  }
+}
+
+//HOF is a fun which takes a comp as a parameter and returns a new component
