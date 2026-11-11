@@ -14,6 +14,8 @@ import UserContext from "./utils/createContext";
 import { Provider } from "react-redux";
 import appStore from "./store/store";
 import { Cart } from "./components/Cart";
+import Memo  from "./components/Memo";
+
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -63,6 +65,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/memo",
+        element: <Memo />,
       },
       {
         path: "/grocery",

@@ -1,4 +1,4 @@
-export const ProductList=[
+/* export const ProductList=[
     {
       "_id": 101,
       "title": "Canon EOS Rebel T100",
@@ -219,4 +219,30 @@ export const ProductList=[
       "isNew": false,
       "category": "Fashion"
     }
-  ]
+  ] */
+
+export const nthPrime = (n:any) => {
+  if (n <= 0) return 0;
+
+  let count = 0;
+  let num = 1;
+
+  while (count < n) {
+    num++;
+
+    let isPrime = true;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      count++;
+    }
+  }
+
+  return num;
+};
