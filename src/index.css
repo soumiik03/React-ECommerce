@@ -143,6 +143,38 @@ input {
     transition: transform 180ms ease, border-color 180ms ease;
 }
 
+.product-details {
+    width: calc(100% - 40px);
+    max-width: 680px;
+    min-height: 0;
+    height: auto;
+    gap: 10px;
+    margin: clamp(24px, 5vw, 56px) auto;
+    padding: clamp(20px, 4vw, 36px);
+    box-shadow: 0 8px 24px rgb(17 17 17 / 8%);
+}
+
+.product-details img {
+    height: clamp(220px, 35vw, 320px);
+}
+
+.product-details h1 {
+    min-height: 0;
+}
+
+.product-details p:last-of-type {
+    margin-top: 8px;
+    padding-top: 0;
+    font-size: 1.1rem;
+}
+
+.product-details button {
+    min-height: 44px;
+    margin-top: 8px;
+    border: 1px solid #111111;
+    cursor: pointer;
+}
+
 .product_card > a:hover .product,
 .product_card > a:focus-visible .product {
     transform: translateY(-4px);

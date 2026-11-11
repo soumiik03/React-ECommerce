@@ -6,6 +6,7 @@ export const Product=({product}:any)=>{
         <h1>{title}</h1>
         <p>{brand}</p>
         <p>{price}</p>
+        
       </div>
     )
   }
