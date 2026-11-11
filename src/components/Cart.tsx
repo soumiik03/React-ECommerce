@@ -6,22 +6,28 @@ export const Cart = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <h1 className="font-bold text-2xl">Cart ({cartItems.length})</h1>
+        <div className="cart-page">
+            <div className="cart-header">
+                <h1>Cart <span>({cartItems.length})</span></h1>
             <button
-                    className="bg-black text-white p-1 rounded-md"
+                    className="cart-clear"
                     onClick={() => dispatch(clearItems())}
             >
                     Clear Cart
             </button>
+            </div>
+            <div className="cart-items">
             {cartItems.map((item, index) => (
-                    <div key={`${item.id}-${index}`} className="product">
+                    <div key={`${item.id}-${index}`} className="cart-item">
                         <img src={item.image} alt={item.title} />
-                        <h2>{item.title}</h2>
-                        <p>{item.brand}</p>
-                        <p>{item.price}</p>
+                        <div className="cart-item-info">
+                            <h2>{item.title}</h2>
+                            {item.brand && <p>{item.brand}</p>}
+                            <p className="cart-item-price">${item.price}</p>
+                        </div>
                     </div>
             ))}
+            </div>
         </div>
     );
 };
