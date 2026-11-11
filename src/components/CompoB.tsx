@@ -5,7 +5,7 @@ function CompoB() {
   return (
     <div>
         <div>CompoB</div>
-        <CompoC/>
+        <CompoC />
     </div>
     
   )

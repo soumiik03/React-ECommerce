@@ -2,7 +2,9 @@ import { createContext } from "react";
 
 const UserContext=createContext({
     name:"SoumikT",
-    email:"Sou@gmail.com"
+    setUserName: (_name: string): void => {
+        throw new Error("UserContext provider is missing")
+    }
 })
 
 export default UserContext

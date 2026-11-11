@@ -1,8 +1,9 @@
 import { Product } from "./Product";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
 import { Link } from "react-router-dom";
 import { HOF } from "./Product";
+import UserContext from "@/utils/createContext";
 
 interface ProductType {
   id: number;
@@ -25,6 +26,9 @@ export const ProductCard = () => {
   const [ListofProduct, setListofProduct] = useState<ProductType[]>([]);
   const [filterProduct, setfilterProduct] = useState<ProductType[]>([]); //Array destructuring
   const [searchText, setSearchText] = useState("");
+
+
+  const user=useContext(UserContext)
 
   useEffect(() => {
     fetchData();
@@ -67,6 +71,7 @@ export const ProductCard = () => {
           type="text"
           placeholder="Enter..."
         />
+        
         <button
           onClick={() => {
             const filtered = ListofProduct.filter((product) => {
@@ -81,6 +86,7 @@ export const ProductCard = () => {
         >
           Search
         </button>
+        <input className="border border-black p-2 " type="text" value={user.name} onChange={(e)=>{user.setUserName(e.target.value)}}></input>
       </div>
 
       <button

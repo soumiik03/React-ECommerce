@@ -1,9 +1,13 @@
-import { useState } from "react";
+import UserContext from "@/utils/createContext";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar=()=>{
   //let btnName="Light";
   const[theme,setTheme]=useState("Light");
+
+  const user=useContext(UserContext)
+
     return(
       <div className="navbar">
         <h1>AJIO</h1>
@@ -14,6 +18,7 @@ const Navbar=()=>{
           <li>CART</li>
           <li><Link to="/about">ABOUT</Link></li>
           <li><Link to="/grocery">GROCERY</Link></li>
+          <li>{user.name}</li>
           <button className="theme" onClick={()=>{
             theme=="Light"? setTheme("Dark"): setTheme("Light")
           }}>{theme}</button>

@@ -8,16 +8,25 @@ import Error from "./components/Error";
 import { ProductDetails } from "./components/ProductDetails";
 import { About } from "./components/About";
 //import Grocery  from "./components/Grocery";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
+import CompoA from "./components/CompoA";
+import UserContext from "./utils/createContext";
 
 const Grocery=lazy(()=>import('./components/Grocery'));
 
 const App=()=>{
+
+  const[userName,setUserName]=useState("Soumik")
+
   return(
-    <div>
-      <Navbar/>
-      <Outlet/>
-    </div>
+    <UserContext.Provider value={{name:userName,setUserName}}>  {/* Can be used in any coponent */}
+      <div>
+        
+        <Navbar/>
+        {/* <CompoA /> */}
+        <Outlet/>
+      </div>
+    </UserContext.Provider> 
   )
 }
 
