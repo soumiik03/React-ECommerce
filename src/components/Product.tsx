@@ -21,4 +21,4 @@ export const HOF = (WrappedComponent: (props: any) => any) => {
   }
 }
 
-//HOF is a fun which takes a comp as a parameter and returns a new component
+//HOF is a fun which takes a comp as a parameter and returns a new ehanced component
