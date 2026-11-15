@@ -16,6 +16,7 @@ import appStore from "./store/store";
 import { Cart } from "./components/Cart";
 import Memo  from "./components/Memo";
 import Ref from "./components/Ref";
+import { Login } from "./components/Login";
 
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -74,6 +75,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/ref",
         element: <Ref />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/grocery",
